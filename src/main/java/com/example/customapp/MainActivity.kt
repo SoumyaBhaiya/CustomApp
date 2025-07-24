@@ -1,5 +1,6 @@
 package com.example.customapp
 
+import android.drm.DrmStore.RightsStatus
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -37,6 +38,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    BhaiyaImage(modifier = Modifier)
+                    BhaiyasHeading("Bhaiyas", "in development", modifier = Modifier)
                     GeneralPurposeText(
                         "This is some general purpose text.", modifier = Modifier
                     )
@@ -47,13 +50,13 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun BhaiyasHeading(message: String, from: String, modifier: Modifier = Modifier){
-    Column(verticalArrangement = Arrangement.Center,
+    Column(verticalArrangement = Arrangement.Top,
         modifier = modifier) {
         Text(
             text = message,
             fontSize = 70.sp,
             lineHeight = 26.sp,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Right
         )
         Text(
             text = from,
